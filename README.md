@@ -30,28 +30,28 @@ This project simulates a **transaction processing service** for Midas, a financi
 ### 1. Build the project
 ```bash
 mvn clean install
-2. Run the Incentive API
+### 2. Run the Incentive API
 java -jar services/transaction-incentive-api.jar
 
-3. Run Midas Core
+###3. Run Midas Core
 mvn spring-boot:run
 
-4. REST API for user balances
+### 4. REST API for user balances
 GET http://localhost:33400/balance?userId=<id>
 
 
-Sample query using curl:
+## Sample query using curl:
 
 curl -X GET "http://localhost:33400/balance?userId=9"
 
 
-Sample response:
+## Sample response:
 
 {
   "amount": 3460.21
 }
 
-Project Structure
+## Project Structure
 src/
 ├─ main/
 │  ├─ java/com/jpmc/midascore/
@@ -65,7 +65,7 @@ src/
 │     └─ application.yml  # Configuration for Kafka and DB
 ├─ test/                  # Unit and integration tests
 
-Example Workflow
+## Example Workflow
 
 Transaction message received from Kafka.
 
@@ -79,7 +79,7 @@ Record transaction in TransactionRecord entity.
 
 User queries /balance?userId=<id> → returns current balance including incentives.
 
-Test Coverage
+## Test Coverage
 
 TaskTwoTests → Kafka transaction consumption.
 
@@ -89,14 +89,14 @@ TaskFourTests → Incentive API integration and balance adjustments.
 
 TaskFiveTests → User balance REST API endpoint.
 
-Contributing
+## Contributing
 
 This repository is for learning and simulation purposes as part of the Forage JPMorgan program. Contributions are welcome for enhancements and bug fixes. Please follow standard GitHub workflow: fork → clone → branch → PR.
 
-License
+## License
 
 MIT License
 
-Author
+## Author
 
 Deepesh Dhanvijay
